@@ -1,0 +1,125 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 56px;    
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.header a:hover {
+    color: rgb(35, 104, 164);
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: .25s;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    max-width: 128px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right a {
+    /* font-weight: 500; */
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: #000;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Menu mobile */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 56px; /* mesma altura do header */
+    left: 0;
+    right: 0;
+    padding: 0.5rem 2rem 1rem;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 0;
+}
+
+.mobile-menu a:hover {
+    color: rgb(35, 104, 164);
+    font-weight: 500;
+}
+
+/* Estado aberto */
+.mobile-menu.open {
+    display: flex;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-content {
+        display: none; /* esconde links no header no mobile */
+    }
+
+    .header-right {
+        display: none; /* "Acessar Sistema" só no menu mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
