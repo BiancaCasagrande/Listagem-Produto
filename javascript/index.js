@@ -1,4 +1,4 @@
-var url = 'http://200.144.254.118:8000/produtos';
+var url = '/api/produtos';
 
 $(document).ready(function () {
     if ($('#tb_produtos').length) {
